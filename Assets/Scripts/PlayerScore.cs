@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerScore : MonoBehaviour
 {
     public static float score = 0;
-    private Text scoreText;
+    [SerializeField] private Text scoreText;
     void Start()
     {
         scoreText = GetComponent<Text>();

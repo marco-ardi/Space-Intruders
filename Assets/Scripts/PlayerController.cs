@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float max;
     [SerializeField] private float min;
-    private float health=100;
     [SerializeField] private GameObject Shot;
     [SerializeField] private Transform shotSpawn;
     [SerializeField] private float fireRate;
@@ -41,7 +40,7 @@ public class PlayerController : MonoBehaviour
         }
         //se ricevi un colpo dovresti diminuire la tua salute
 
-        if (health <= 0)
+        if (PlayerHealth.health <= 0)
         {
             GameOver.isDead = true;
         }

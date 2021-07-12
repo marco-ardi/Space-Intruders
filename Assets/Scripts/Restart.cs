@@ -13,6 +13,7 @@ public class Restart : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             PlayerScore.score = 0;
+            PlayerHealth.health = 100;
             GameOver.isDead = false;
             Time.timeScale = 1;
             SceneManager.LoadScene("Scene_0");
