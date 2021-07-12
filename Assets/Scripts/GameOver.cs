@@ -20,6 +20,9 @@ public class GameOver : MonoBehaviour
         {
             Time.timeScale = 0;
             gameOver.enabled = true;
+            //pulisce la scena quando il gioco finisce
+            Destroy(GameObject.FindWithTag("Player"));
+            Destroy(GameObject.FindWithTag("Enemy"));
         }
     }
 }

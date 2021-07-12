@@ -16,6 +16,7 @@ public class Restart : MonoBehaviour
             PlayerHealth.health = 100;
             GameOver.isDead = false;
             Time.timeScale = 1;
+            Timer.time = 0;
             SceneManager.LoadScene("Scene_0");
         }   
     }
