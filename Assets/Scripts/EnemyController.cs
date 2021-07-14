@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
-    private Transform enemyHolder;
+    [SerializeField]private Transform enemyHolder;
     [SerializeField] private float speed;
     [SerializeField] private GameObject shot;
     [SerializeField] private Text winText;
