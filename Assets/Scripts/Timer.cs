@@ -5,10 +5,25 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    private static Timer _instance;
     public static float timer = 0f;
     public static int time = 0;
     public float delay = 1.0f;
     [SerializeField] private Text timerText;
+
+    void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     void Start()
     {
         timerText = GetComponent<Text>();
@@ -23,17 +38,6 @@ public class Timer : MonoBehaviour
             time++;
             timerText.text = "Time: " + time;
         }
-    }
-    
-    /*void Update()
-    {
-        timer += Time.deltaTime;
-        if(time >= delay)
-        {
-            timer = 0f;
-            time++;
-            Debug.Log(time);
-            timerText.text = "Time: " + time;
-        }
-    }*/
+    }   
 }
+

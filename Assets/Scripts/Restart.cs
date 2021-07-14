@@ -5,9 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
 {
+    private static Restart _instance;
 
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
