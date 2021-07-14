@@ -23,6 +23,7 @@ public class GameOver : MonoBehaviour
             //pulisce la scena quando il gioco finisce
             Destroy(GameObject.FindWithTag("Player"));
             Destroy(GameObject.FindWithTag("Enemy"));
+            Destroy(GameObject.FindWithTag("Bullet"));
         }
     }
 }
