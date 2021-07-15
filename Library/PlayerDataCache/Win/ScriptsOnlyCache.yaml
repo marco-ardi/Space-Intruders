@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - EnemyController
     - GameOver
     - MainMenu
+    - PauseMenu
     - PlayerController
     - PlayerHealth
     - PlayerScore
@@ -85,17 +86,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13828}
     - Class: 114
-      Script: {instanceID: 14412}
+      Script: {instanceID: 14092}
     - Class: 114
-      Script: {instanceID: 14444}
+      Script: {instanceID: 14414}
     - Class: 114
-      Script: {instanceID: 14464}
+      Script: {instanceID: 14446}
     - Class: 114
-      Script: {instanceID: 14486}
+      Script: {instanceID: 14462}
     - Class: 114
-      Script: {instanceID: 15248}
+      Script: {instanceID: 14468}
     - Class: 114
-      Script: {instanceID: 25274}
+      Script: {instanceID: 14490}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -150,6 +151,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11624}
     - Class: 114
+      Script: {instanceID: 11678}
+    - Class: 114
       Script: {instanceID: 12138}
     - Class: 114
       Script: {instanceID: 12154}
@@ -157,6 +160,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12350}
     - Class: 114
       Script: {instanceID: 12466}
+    - Class: 114
+      Script: {instanceID: 13058}
     - Class: 114
       Script: {instanceID: 13074}
     - Class: 114
@@ -170,7 +175,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14052}
     - Class: 114
-      Script: {instanceID: 14444}
+      Script: {instanceID: 14446}
+    - Class: 114
+      Script: {instanceID: 17384}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -638,6 +645,12 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: b8f430840f230f1f9b8ab730596d9bb4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SettingsMenu
+  - hash:
+      serializedVersion: 2
       Hash: 800c50acba124432abb4cf0d47202e06
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -710,6 +723,12 @@ ScriptsOnlyBuild:
     className: StandaloneInputModule
   - hash:
       serializedVersion: 2
+      Hash: 29217d94c049094e0b6d9a7ff8adb57a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioManager
+  - hash:
+      serializedVersion: 2
       Hash: aa88ae22474df55295327e4ee99e5a24
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -740,16 +759,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 29217d94c049094e0b6d9a7ff8adb57a
+      Hash: c8c5e65e9fb858572516474d6e2102bc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: AudioManager
-  - hash:
-      serializedVersion: 2
-      Hash: b8f430840f230f1f9b8ab730596d9bb4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SettingsMenu
+    className: PauseMenu
   platform: 5
   scenePathNames:
   - Assets/Scenes/Menu.unity

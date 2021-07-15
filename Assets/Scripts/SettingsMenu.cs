@@ -14,7 +14,6 @@ public class SettingsMenu : MonoBehaviour
     public Toggle fullscreenToggle;
     private int screenInt;
     Resolution[] resolutions;
-    private bool isFullScreen = false;
 
     const string prefName = "optionvalue";
     const string resName = "resolutionoption";
@@ -24,7 +23,6 @@ public class SettingsMenu : MonoBehaviour
         screenInt = PlayerPrefs.GetInt("togglestate");
         if (screenInt == 1)
         {
-            isFullScreen = true;
             fullscreenToggle.isOn = true;
         }
         else
@@ -99,7 +97,6 @@ public class SettingsMenu : MonoBehaviour
             PlayerPrefs.SetInt("togglestate", 0);
         else
         {
-            isFullScreen = true;
             PlayerPrefs.SetInt("togglestate", 1);
         }
     }
