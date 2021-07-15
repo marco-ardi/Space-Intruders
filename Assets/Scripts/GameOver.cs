@@ -24,6 +24,7 @@ public class GameOver : MonoBehaviour
             Destroy(GameObject.FindWithTag("Player"));
             Destroy(GameObject.FindWithTag("Enemy"));
             Destroy(GameObject.FindWithTag("Bullet"));
+            Destroy(GameObject.FindWithTag("EnemyBullet"));
         }
     }
 }

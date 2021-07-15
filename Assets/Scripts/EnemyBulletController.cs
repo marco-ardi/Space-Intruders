@@ -15,7 +15,7 @@ public class EnemyBulletController : MonoBehaviour
     {
         bullet.position += Vector3.up * -speed;
 
-        if (bullet.position.y <= -10)
+        if (bullet.position.y <= -6)        //per ottimizzare
             Destroy(bullet.gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,9 +23,7 @@ public class EnemyBulletController : MonoBehaviour
         if(collision.tag == "Player")
         {   //diminuisci vita
             PlayerHealth.health -= 20;
-            //Destroy(collision.gameObject);
             Destroy(gameObject);
-            //GameOver.isDead = true;
         }
         
     }

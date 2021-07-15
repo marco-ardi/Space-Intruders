@@ -17,7 +17,39 @@ public class EnemyController : MonoBehaviour
         enemyHolder = GetComponent<Transform>();
     }
 
-    
+
+    /*void MoveEnemy()
+    {
+        enemyHolder.position += Vector3.right * speed;
+        if (enemyHolder.position.x <= -8.5 || enemyHolder.position.x >= 10)
+        {
+            speed = -speed;
+            enemyHolder.position += Vector3.down * 1.3f;
+            return;
+        }
+
+        if (Random.value > fireRate)     //10% prob
+        {
+            Instantiate(shot, enemyHolder.position, enemyHolder.rotation);
+        }
+
+        if (enemyHolder.position.y <= -4)
+        {
+            GameOver.isDead = true;
+            Time.timeScale = 0;
+        }
+
+        if (enemyHolder.childCount == 1)
+        {
+            CancelInvoke();
+            InvokeRepeating("MoveEnemy", 0.1f, 0.25f);
+        }
+        if (enemyHolder.childCount == 0)
+        {
+            //        winText.enabled = true;
+        }
+    }*/
+
     void MoveEnemy()
     {
         enemyHolder.position += Vector3.right * speed;
@@ -30,7 +62,7 @@ public class EnemyController : MonoBehaviour
                 return;
             }
 
-            if(Random.value > fireRate)
+            if(Random.value > fireRate)     //10% prob
             {
                 Instantiate(shot, enemy.position, enemy.rotation);
             }
