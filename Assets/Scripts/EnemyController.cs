@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -52,6 +53,11 @@ public class EnemyController : MonoBehaviour
 
     void MoveEnemy()
     {
+        if(speed > 0)
+            speed = speed + Timer.time * 0.001f;    //la velocità aumenta progressivamente man mano che il tempo scorre
+        else                                        //attenzione al segno di speed
+            speed = - (Math.Abs(speed) + Timer.time * 0.001f);
+
         enemyHolder.position += Vector3.right * speed;
         foreach(Transform enemy in enemyHolder)
         {
@@ -62,7 +68,7 @@ public class EnemyController : MonoBehaviour
                 return;
             }
 
-            if(Random.value > fireRate)     //10% prob
+            if(UnityEngine.Random.value > fireRate)     //10% prob
             {
                 Instantiate(shot, enemy.position, enemy.rotation);
             }
@@ -71,16 +77,6 @@ public class EnemyController : MonoBehaviour
             {
                 GameOver.isDead = true;
                 Time.timeScale = 0;
-            }
-
-            if (enemyHolder.childCount == 1)
-            {
-                CancelInvoke();
-                InvokeRepeating("MoveEnemy", 0.1f, 0.25f);
-            }
-            if (enemyHolder.childCount == 0)
-            {
-        //        winText.enabled = true;
             }
         }
     }

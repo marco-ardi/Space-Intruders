@@ -24,8 +24,6 @@ public class SpawnManager : MonoBehaviour
             x = Random.Range(-3.5f, 14.0f);
             pos = new Vector2(x, -0.1f); //x random, y fissata in alto
             Instantiate(enemy, pos, Quaternion.identity);
-            Debug.Log(pos.ToString());
-
         }
     }
 }

@@ -7,10 +7,18 @@ public class GameOver : MonoBehaviour
 {
     public static bool isDead=false;
     public Text gameOver;
+    public Text ShowScoreboard;
+    public Text restartText;
+    public Text AddYourName;
+    public GameObject inputField;
     void Start()
     {
         gameOver = GetComponent<Text>();
         gameOver.enabled = false;
+        ShowScoreboard.enabled = false;
+        restartText.enabled = false;
+        AddYourName.enabled = false;
+        inputField.SetActive(false);
     }
 
 
@@ -20,6 +28,10 @@ public class GameOver : MonoBehaviour
         {
             Time.timeScale = 0;
             gameOver.enabled = true;
+            ShowScoreboard.enabled = true;
+            restartText.enabled = true;
+            AddYourName.enabled = true;
+            inputField.SetActive(true);
             //pulisce la scena quando il gioco finisce
             Destroy(GameObject.FindWithTag("Player"));
             Destroy(GameObject.FindWithTag("Enemy"));
