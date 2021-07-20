@@ -68,6 +68,8 @@ public class SettingsMenu : MonoBehaviour
             }
         }
 
+        //options.RemoveRange(0, 5);  //rimuove le prime risoluzioni, troppo basse
+
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = PlayerPrefs.GetInt(resName, currentResolutionIndex);
         resolutionDropdown.RefreshShownValue();

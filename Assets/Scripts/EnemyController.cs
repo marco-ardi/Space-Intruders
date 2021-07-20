@@ -19,38 +19,6 @@ public class EnemyController : MonoBehaviour
     }
 
 
-    /*void MoveEnemy()
-    {
-        enemyHolder.position += Vector3.right * speed;
-        if (enemyHolder.position.x <= -8.5 || enemyHolder.position.x >= 10)
-        {
-            speed = -speed;
-            enemyHolder.position += Vector3.down * 1.3f;
-            return;
-        }
-
-        if (Random.value > fireRate)     //10% prob
-        {
-            Instantiate(shot, enemyHolder.position, enemyHolder.rotation);
-        }
-
-        if (enemyHolder.position.y <= -4)
-        {
-            GameOver.isDead = true;
-            Time.timeScale = 0;
-        }
-
-        if (enemyHolder.childCount == 1)
-        {
-            CancelInvoke();
-            InvokeRepeating("MoveEnemy", 0.1f, 0.25f);
-        }
-        if (enemyHolder.childCount == 0)
-        {
-            //        winText.enabled = true;
-        }
-    }*/
-
     void MoveEnemy()
     {
         if(speed > 0)
@@ -61,10 +29,11 @@ public class EnemyController : MonoBehaviour
         enemyHolder.position += Vector3.right * speed;
         foreach(Transform enemy in enemyHolder)
         {
-            if(enemy.position.x <= -8.5 || enemy.position.x >= 10)
+            if(enemy.position.x <= -5.5 || enemy.position.x >= 7)
             {
                 speed = -speed;
-                enemyHolder.position += Vector3.down * 1.3f;
+                //enemyHolder.position += Vector3.down * 1.3f;
+                enemyHolder.position += new Vector3(0,-1.3f,0);
                 return;
             }
 
