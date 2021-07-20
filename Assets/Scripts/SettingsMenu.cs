@@ -11,12 +11,16 @@ public class SettingsMenu : MonoBehaviour
     public Slider volSlider;
     public Dropdown qualityDropdown;
     public Dropdown resolutionDropdown;
+    public Dropdown difficultDropdown;
     public Toggle fullscreenToggle;
     private int screenInt;
     Resolution[] resolutions;
 
+    public static float difficultValue;
+
     const string prefName = "optionvalue";
     const string resName = "resolutionoption";
+    const string difName = "difficults";
 
     private void Awake()
     {
@@ -39,6 +43,12 @@ public class SettingsMenu : MonoBehaviour
             PlayerPrefs.SetInt(prefName, qualityDropdown.value);
             PlayerPrefs.Save();
         }));
+
+        difficultDropdown.onValueChanged.AddListener(new UnityAction<int>(index =>
+        {
+            PlayerPrefs.SetInt(difName, difficultDropdown.value);
+            PlayerPrefs.Save();
+        }));
     }
 
     void Start()
@@ -52,6 +62,7 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
+        List<string> difOptions = new List<string>();
 
         int currentResolutionIndex = 0;
 
@@ -68,11 +79,15 @@ public class SettingsMenu : MonoBehaviour
             }
         }
 
-        //options.RemoveRange(0, 5);  //rimuove le prime risoluzioni, troppo basse
-
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = PlayerPrefs.GetInt(resName, currentResolutionIndex);
         resolutionDropdown.RefreshShownValue();
+
+        difOptions.Add("Easy");
+        difOptions.Add("Medium");
+        difOptions.Add("Hard");
+        difficultDropdown.AddOptions(difOptions);
+        difficultDropdown.value = PlayerPrefs.GetInt(difName);
     }
 
     public void SetResolution(int resolutionIndex)
@@ -81,15 +96,19 @@ public class SettingsMenu : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
-    /*public void changeVol(float volume)
-    {
-        PlayerPrefs.SetFloat("MVolume", volume);
-        volMixer.SetFloat("volume", PlayerPrefs.GetFloat("MVolume"));
-    }*/
-
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    public void SetDifficult(int difficultIndex)
+    {
+        if (difficultIndex == 0)        //difficultValue viene moltiplicato alla velocità degli enemy
+            difficultValue = 0.9f;
+        else if (difficultIndex == 1)
+            difficultValue = 1.0f;
+        else if (difficultIndex == 2)
+            difficultValue = 1.1f;
     }
 
     public void SetFullscreen(bool isFullScreen)
