@@ -38,6 +38,8 @@ public class BulletController : MonoBehaviour
                     Instantiate(PowerupEnemyslow, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             }
 
+            //Destroy(collision.gameObject.transform.GetChild(0).gameObject);
+            Destroy(collision.gameObject.transform.parent.gameObject);
             Destroy(collision.gameObject);
             Destroy(gameObject);
             PlayerScore.score += 10;

@@ -9,7 +9,7 @@ public class EventManager : MonoBehaviour
 
     private void Update()
     {
-        if(PlayerHealth.health <= 20)   //in PlayerController cambio il colore al player
+        if(PlayerHealth.health == 20)   //in PlayerController cambio il colore al player
         {
             Happened(); 
         }

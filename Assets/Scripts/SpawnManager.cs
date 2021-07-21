@@ -22,8 +22,11 @@ public class SpawnManager : MonoBehaviour
         {
             nextSpawn = Time.time + spawnRate;
             x = Random.Range(-2.5f, 4.0f);
-            pos = new Vector2(x, 3.3f); //x random, y fissata in alto
-            Instantiate(enemy, pos, Quaternion.identity);
+            pos = new Vector3(x, 3.3f, 0f); //x random, y fissata in alto
+            Collider[] colliders = Physics.OverlapBox(pos, new Vector3(0.7f,0.7f,0.7f));    //verifica che non ci siano altri oggetti in pos
+            if(colliders.Length==0)
+                Instantiate(enemy, pos, Quaternion.identity);
+           
         }
     }
 }

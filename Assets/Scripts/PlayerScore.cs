@@ -3,24 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerScore : MonoBehaviour
+public class PlayerScore : Singleton<PlayerScore>
 {
     public static float score;
     [SerializeField] private Text scoreText;
-    private static PlayerScore _instance;
 
-    void Awake()
-    {
-        if (_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this);
-        }
-    }
 
     void Start()
     {

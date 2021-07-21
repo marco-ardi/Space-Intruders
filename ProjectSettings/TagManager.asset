@@ -14,6 +14,7 @@ TagManager:
   - Floor
   - Undefined
   - Effect
+  - Enemy_Child
   layers:
   - Default
   - TransparentFX

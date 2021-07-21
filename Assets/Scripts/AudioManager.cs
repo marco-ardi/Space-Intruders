@@ -2,25 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager: MonoBehaviour
+public class AudioManager: Singleton<AudioManager>
 {
     public AudioSource MyAudioSource;
     float musicVolume;
 
-    private static AudioManager _instance;
-
-    private void Awake()
-    {
-        if (_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this);
-        }
-    }
     void Start()
     {
         MyAudioSource = GetComponent<AudioSource>();
