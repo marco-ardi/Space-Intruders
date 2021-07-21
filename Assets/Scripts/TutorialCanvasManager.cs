@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TutorialCanvasManager : MonoBehaviour
+public class TutorialCanvasManager : MonoBehaviour, ITutorialCanvasManager
 {
     public Text Title_1;
     public Text Sentence_1;
@@ -56,7 +56,7 @@ public class TutorialCanvasManager : MonoBehaviour
             Title_3.enabled = true;
             Sentence_3.enabled = true;
 
-            Instantiate(singleEnemy, new Vector3(0, 0, 0), Quaternion.identity);
+            Instantiate(singleEnemy, new Vector3(0, 1.5f, 0), Quaternion.identity);
 
             isScene2 = false;
             isScene3 = true;

@@ -142,3 +142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
+  PowerupHealth: {fileID: 2275324893611540774, guid: b558e5218e559c04bb26d3ddc64b72d7,
+    type: 3}
+  PowerupShotspeed: {fileID: 7392506021867445412, guid: b2965c5267688924b9c3a757f59a7a92,
+    type: 3}
+  PowerupEnemyslow: {fileID: 7479987873962691078, guid: 89c9dfbdc9b203f4a901d9957d3b6174,
+    type: 3}

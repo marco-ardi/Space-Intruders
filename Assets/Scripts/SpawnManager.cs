@@ -21,8 +21,8 @@ public class SpawnManager : MonoBehaviour
         if(Time.time > nextSpawn)
         {
             nextSpawn = Time.time + spawnRate;
-            x = Random.Range(-3.5f, 14.0f);
-            pos = new Vector2(x, -0.1f); //x random, y fissata in alto
+            x = Random.Range(-2.5f, 4.0f);
+            pos = new Vector2(x, 3.3f); //x random, y fissata in alto
             Instantiate(enemy, pos, Quaternion.identity);
         }
     }

@@ -5,21 +5,57 @@ using UnityEngine;
 public class Powerup : MonoBehaviour, IPowerup
 {
     public GameObject effetto;
-    public void onTriggerEnter(Collider other)
+    public float duration = 5;
+    public AudioSource myAudio;
+
+    private void Start()
     {
-        if (other.gameObject.tag=="Player")
+        myAudio = GetComponent<AudioSource>();
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Entro in triggerenter");
-            Pickup(other);
+            myAudio.PlayOneShot(myAudio.clip);
+            StartCoroutine(Pickup(other));
         }
-        else
-            Debug.Log(other.gameObject.tag);
     }
 
-    void Pickup(Collider player)
+    IEnumerator Pickup(Collider player)
     {
-        Debug.Log("toccato");
         Instantiate(effetto, transform.position, transform.rotation);
+
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
+
+        yield return new WaitForSeconds(1);
+        Destroy(GameObject.FindGameObjectWithTag("Effect"));
+        
+        //in base al powerup, inizia l'effetto
+        if (gameObject.tag == "PowerupHealth")
+        {
+            PlayerHealth.health += 20;
+        }
+        else if (gameObject.tag == "PowerupEnemyslow")
+        {
+            EnemyController.powerupSlow = -0.1f;
+        }
+        else if (gameObject.tag == "PowerupShotspeed")
+        {
+            BulletController.powerupSpeed = 0.1f;
+        }
+
+        yield return new WaitForSeconds(duration);
+        //dopo duration secondi, ripristino le impostazioni e distruggo
+        if (gameObject.tag == "PowerupEnemyslow")
+        {
+            EnemyController.powerupSlow = 0;
+        }
+        else if (gameObject.tag == "PowerupShotspeed")
+        {
+            BulletController.powerupSpeed = 0;
+        }
+
         Destroy(gameObject);
     }
 }

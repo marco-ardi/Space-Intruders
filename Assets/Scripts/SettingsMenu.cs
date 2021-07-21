@@ -16,7 +16,7 @@ public class SettingsMenu : MonoBehaviour
     private int screenInt;
     Resolution[] resolutions;
 
-    public static float difficultValue;
+    public static float difficultValue=1.0f;
 
     const string prefName = "optionvalue";
     const string resName = "resolutionoption";

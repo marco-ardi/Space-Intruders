@@ -18,7 +18,7 @@ public class EnemyBulletController : MonoBehaviour
         if (bullet.position.y <= -6)        //per ottimizzare
             Destroy(bullet.gameObject);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if(collision.tag == "Player")
         {   //diminuisci vita

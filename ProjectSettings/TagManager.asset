@@ -8,7 +8,12 @@ TagManager:
   - EnemyBullet
   - Enemy
   - Bullet
-  - Powerup
+  - PowerupHealth
+  - PowerupShotspeed
+  - PowerupEnemyslow
+  - Floor
+  - Undefined
+  - Effect
   layers:
   - Default
   - TransparentFX

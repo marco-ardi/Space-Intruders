@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - BulletController
     - EnemyBulletController
     - EnemyController
+    - EventManager
     - GameOver
     - MainMenu
     - PauseMenu
@@ -89,27 +90,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12338}
     - Class: 114
-      Script: {instanceID: 12518}
+      Script: {instanceID: 12516}
     - Class: 114
-      Script: {instanceID: 12904}
+      Script: {instanceID: 12902}
     - Class: 114
-      Script: {instanceID: 13300}
+      Script: {instanceID: 13294}
     - Class: 114
-      Script: {instanceID: 14142}
+      Script: {instanceID: 14128}
     - Class: 114
-      Script: {instanceID: 14420}
+      Script: {instanceID: 14406}
     - Class: 114
-      Script: {instanceID: 14440}
+      Script: {instanceID: 14426}
     - Class: 114
-      Script: {instanceID: 14770}
+      Script: {instanceID: 14752}
     - Class: 114
-      Script: {instanceID: 14802}
+      Script: {instanceID: 14784}
     - Class: 114
-      Script: {instanceID: 14822}
+      Script: {instanceID: 14804}
     - Class: 114
-      Script: {instanceID: 14828}
+      Script: {instanceID: 14810}
     - Class: 114
-      Script: {instanceID: 14852}
+      Script: {instanceID: 14834}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -147,9 +148,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -174,41 +183,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12312}
     - Class: 114
-      Script: {instanceID: 12518}
+      Script: {instanceID: 12516}
     - Class: 114
-      Script: {instanceID: 12642}
+      Script: {instanceID: 12640}
     - Class: 114
-      Script: {instanceID: 12806}
+      Script: {instanceID: 12804}
     - Class: 114
-      Script: {instanceID: 13118}
+      Script: {instanceID: 13114}
     - Class: 114
-      Script: {instanceID: 13300}
+      Script: {instanceID: 13294}
     - Class: 114
-      Script: {instanceID: 13316}
+      Script: {instanceID: 13310}
     - Class: 114
-      Script: {instanceID: 13538}
+      Script: {instanceID: 13530}
     - Class: 114
-      Script: {instanceID: 13618}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13672}
+      Script: {instanceID: 13664}
     - Class: 114
-      Script: {instanceID: 13770}
+      Script: {instanceID: 13762}
     - Class: 114
-      Script: {instanceID: 13772}
+      Script: {instanceID: 13764}
     - Class: 114
-      Script: {instanceID: 13848}
+      Script: {instanceID: 13840}
+    - Class: 114
+      Script: {instanceID: 14114}
     - Class: 114
       Script: {instanceID: 14128}
     - Class: 114
-      Script: {instanceID: 14142}
+      Script: {instanceID: 14172}
     - Class: 114
-      Script: {instanceID: 14186}
+      Script: {instanceID: 14362}
     - Class: 114
-      Script: {instanceID: 14376}
+      Script: {instanceID: 14546}
     - Class: 114
-      Script: {instanceID: 14560}
+      Script: {instanceID: 14784}
     - Class: 114
-      Script: {instanceID: 14802}
+      Script: {instanceID: 26020}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -250,9 +261,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -269,19 +288,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12312}
     - Class: 114
-      Script: {instanceID: 12518}
+      Script: {instanceID: 12516}
     - Class: 114
-      Script: {instanceID: 13300}
+      Script: {instanceID: 13294}
     - Class: 114
-      Script: {instanceID: 13316}
+      Script: {instanceID: 13310}
     - Class: 114
-      Script: {instanceID: 13770}
+      Script: {instanceID: 13762}
     - Class: 114
-      Script: {instanceID: 13794}
+      Script: {instanceID: 13764}
     - Class: 114
-      Script: {instanceID: 14142}
+      Script: {instanceID: 13786}
     - Class: 114
-      Script: {instanceID: 14802}
+      Script: {instanceID: 14128}
+    - Class: 114
+      Script: {instanceID: 14784}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -289,6 +310,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -727,7 +752,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+      Hash: e9ad716099c13e02f06ad04a84c6f46a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BulletController
@@ -805,13 +830,13 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 942b7a1f31b901d138384baa9f0a9da9
+      Hash: 824555c9695ebbe268c7049764134258
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
   - hash:
       serializedVersion: 2
-      Hash: ddf743291e7ab3866d1d160d878f1bc3
+      Hash: 63556cfded1612136a311b7ca4c43b02
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Powerup
@@ -821,12 +846,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TutorialCanvasManager
-  - hash:
-      serializedVersion: 2
-      Hash: 36808e0bceda2a44a651d2c754474786
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SpawnEffect
   - hash:
       serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
@@ -1031,6 +1050,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EventManager
   platform: 5
   scenePathNames:
   - Assets/Scenes/Menu.unity

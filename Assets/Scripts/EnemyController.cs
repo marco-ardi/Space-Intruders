@@ -10,9 +10,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private GameObject shot;
     [SerializeField] private float fireRate=0.9f;
+    public static float powerupSlow=0;
     void Start()
     {
-        //winText.enabled = false;
         InvokeRepeating("MoveEnemy", 0.1f, 0.3f);
         enemyHolder = GetComponent<Transform>();
     }
@@ -22,9 +22,9 @@ public class EnemyController : MonoBehaviour
     {
         Debug.Log("DifficultValue=" + SettingsMenu.difficultValue);
         if(speed > 0)
-            speed = speed * SettingsMenu.difficultValue + Timer.time * 0.001f;    //la velocità aumenta progressivamente man mano che il tempo scorre
-        else                                                                      //e viene moltiplicato il fattore difficoltà
-            speed = - (Math.Abs(speed * SettingsMenu.difficultValue) + Timer.time * 0.001f);          //attenzione al segno di speed
+            speed = speed * SettingsMenu.difficultValue + Timer.time * 0.001f + powerupSlow;    //la velocità aumenta progressivamente man mano che il tempo scorre
+        else                                                                                    //e viene moltiplicato il fattore difficoltà
+            speed = - (Math.Abs(speed * SettingsMenu.difficultValue) + Timer.time * 0.001f + powerupSlow);          //attenzione al segno di speed
         
         enemyHolder.position += Vector3.right * speed;
         foreach(Transform enemy in enemyHolder)

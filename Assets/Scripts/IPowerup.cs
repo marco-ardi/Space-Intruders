@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IPowerup 
 {
-    void onTriggerEnter(Collider other);
+    void OnTriggerEnter(Collider other);
 }
