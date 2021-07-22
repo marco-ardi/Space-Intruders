@@ -1,0 +1,29 @@
+-PlayerPrefs		0.5pt				V
+-Singleton		1pt (max 4)			VVVV	(Restart.cs, Timer.cs, PlayerHealth.cs, PlayerScore.cs, AudioManager.cs)
+-Corutines		0.5pt (max 4)			VVV	(Timer.cs, Powerup.cs, SpawnManager.cs, GameOver.cs)	
+-Interfacce		1pt (max 2)			VV	(IPowerup, ITutorialCanvasManager)
+-Splash screen		0.5pt				V
+-Icona di Gioco		0.5pt				V			
+-Sound/Music		1pt				V
+-Controls		2pt				V
+-Resolution		0.5pt				V
+-Credits Screen		0.5pt				V
+-Classifica Ordinata	2pt				V
+-Tutorial		0.5pt per schermata (max 3)	VVV
+-Score			1pt				V
+-PowerUp		1pt (max 3)			VVV
+-User Interface		0.5pt (max 6)			VVVVVV	(timer, health, score ed i 3 text che spuntano quando si raccoglie un powerup)
+-Particelle		0.5pt (max 3)			VVV	(3 Powerups)
+-Delegates		1pt				V	(EventManager.cs, PlayerController.cs)
+-Eventi			1pt				V	(EventManager.cs, PlayerController.cs)
+-Animazioni		0.5pt (max 2)			VV	(openMouth, moveCannon)
+ -Soundtrack		0.5pt				V
+ -Altri suoni		0.5pt (max 3)			VVV	(3 Powerups + shot sound)
+-Gioco a tempo		0.5pt				V
+-Nemici			1pt				V
+ -livelli difficoltà	1pt				V
+ -difficoltà crescente	1pt				V
+-Generics		2pt				V	(Singleton)
+
+
+TOT: 			37/30

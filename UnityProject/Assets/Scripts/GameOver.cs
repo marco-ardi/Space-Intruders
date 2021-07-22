@@ -19,24 +19,28 @@ public class GameOver : MonoBehaviour
         restartText.enabled = false;
         AddYourName.enabled = false;
         inputField.SetActive(false);
+        StartCoroutine(Check());
     }
 
 
-    void Update()
+    IEnumerator Check()
     {
-        if (isDead)
-        {
-            Time.timeScale = 0;
-            gameOver.enabled = true;
-            ShowScoreboard.enabled = true;
-            restartText.enabled = true;
-            AddYourName.enabled = true;
-            inputField.SetActive(true);
-            //pulisce la scena quando il gioco finisce
-            Destroy(GameObject.FindWithTag("Player"));
-            Destroy(GameObject.FindWithTag("Enemy"));
-            Destroy(GameObject.FindWithTag("Bullet"));
-            Destroy(GameObject.FindWithTag("EnemyBullet"));
+        while (true) { 
+            if (isDead)
+            {
+                Time.timeScale = 0;
+                gameOver.enabled = true;
+                ShowScoreboard.enabled = true;
+                restartText.enabled = true;
+                AddYourName.enabled = true;
+                inputField.SetActive(true);
+                //pulisce la scena quando il gioco finisce
+                Destroy(GameObject.FindWithTag("Player"));
+                Destroy(GameObject.FindWithTag("Enemy"));
+                Destroy(GameObject.FindWithTag("Bullet"));
+                Destroy(GameObject.FindWithTag("EnemyBullet"));
+            }
+            yield return new WaitForSeconds(0f);
         }
     }
 }

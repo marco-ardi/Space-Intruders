@@ -1083,4 +1083,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Scene_0.unity
   - Assets/Scenes/Tutorial.unity
-  playerPath: C:/Users/marco/Desktop/Builded_space-intruders/Space Intruders.exe
+  playerPath: C:/Users/marco/Desktop/space-intruders/Build/Space Intruders.exe
