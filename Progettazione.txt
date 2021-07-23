@@ -8,7 +8,10 @@
 -Controls		2pt				V
 -Resolution		0.5pt				V
 -Credits Screen		0.5pt				V
--Classifica Ordinata	2pt				V
+-Classifica Ordinata	2pt				V	(RowUI.cs per la generica riga, Score.cs per i singoli punteggi, ScoreData.cs la lista di Score, 
+								ScoreManager.cs per salvare e ordinare gli score, ScoreUI.cs per stampare righe e relative info, 
+								ShowScoreboard.cs per gestire la canvas ed AddEntry.cs lo script per inserire un nuovo punteggio)
+
 -Tutorial		0.5pt per schermata (max 3)	VVV
 -Score			1pt				V
 -PowerUp		1pt (max 3)			VVV
